@@ -1,5 +1,6 @@
 Version 0.12
 ------------
+* Remove Celery from the requirements
 * Statistics fixes
 * Italian translation by SeeOpen.IT (www.seeopen.it, info@seeopen.it)
 * Removed the 'db_index' argument from Text fields definition and 

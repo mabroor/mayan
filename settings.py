@@ -118,6 +118,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+# Django
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -127,6 +128,24 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.comments',
     'django.contrib.staticfiles',
+# 3rd party
+# South
+    'south',
+# Sentry 
+    'indexer',
+    'paging',
+    'sentry',
+    'sentry.client',
+    'sentry.client.celery',
+# Others
+    'filetransfers',
+    'taggit',
+    'mptt',
+    'compressor',
+    'djangorestframework',
+    'pagination',
+# Mayan EDMS
+# Base generic
     'permissions',
     'project_setup',
     'project_tools',
@@ -136,50 +155,36 @@ INSTALLED_APPS = (
     'web_theme',
     'common',
     'django_gpg',
-    'pagination',
     'dynamic_search',
-    'filetransfers',
     'acls',
     'converter',
-    'djcelery',
-    'indexer',
-    'paging',
-    'sentry',
-    'sentry.client',
-    'sentry.client.celery',
+    'user_management',
+    'mimetype',
+    'scheduler',
+    'job_processor',
+# Mayan EDMS specific
     'storage',
     'folders',
-    'taggit',
     'tags',
     'document_comments',
-    'user_management',
     'metadata',
     'documents',
     'linking',
-    'mptt',
     'document_indexing',
     'document_acls',
     'ocr',
     'sources',
-    'mimetype',
-    'scheduler',
-    'job_processor',
     'history',
     'main',
-    'compressor',
-    'djangorestframework',
     'rest_api',
-    'south',
     'document_signatures',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.i18n',
-    #'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
-#    'django.contrib.messages.context_processors.messages',
 )
 
 STATICFILES_FINDERS = (
@@ -280,18 +285,7 @@ COMPRESS_ENABLED=False
 #------------ django-sendfile --------------
 # Change to xsendfile for apache if x-sendfile is enabled
 SENDFILE_BACKEND = 'sendfile.backends.simple'
-#----------- django-celery --------------
-import djcelery
-djcelery.setup_loader()
-BROKER_HOST = "localhost"
-BROKER_PORT = 5672
-BROKER_USER = "guest"
-BROKER_PASSWORD = "guest"
-BROKER_VHOST = "/"
-CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 #======== End of user configuration options =======
-#--------- Celery ------------------
-CELERY_DISABLE_RATE_LIMITS = True
 #--------- Web theme ---------------
 WEB_THEME_ENABLE_SCROLL_JS = False
 #--------- Django -------------------
