@@ -1,5 +1,8 @@
 Version 0.12
 ------------
+./manage.py migrate permissions 0001 --fake
+./manage.py migrate documents
+./manage.py migrate document_signatures
 * Remove Celery from the requirements
 * Statistics fixes
 * Italian translation by SeeOpen.IT (www.seeopen.it, info@seeopen.it)
